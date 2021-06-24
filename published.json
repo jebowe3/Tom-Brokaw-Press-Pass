@@ -1,0 +1,162 @@
+{
+  "storymap": {
+    "call_to_action": true,
+    "call_to_action_text": "",
+    "map_as_image": false,
+    "slides": [{
+      "background": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Photograph_of_NBC_White_House_Correspondent_Tom_Brokaw_Interviewing_President_Gerald_R._Ford_in_the_White_House_Library_for_a_Special_NBC_Broadcast_on_American_Foreign_Policy.jpg"
+      },
+      "date": "",
+      "location": {
+        "line": true
+      },
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": ""
+      },
+      "text": {
+        "headline": "Tom Brokaw's Travels Through Press Passes",
+        "text": ""
+      },
+      "type": "overview"
+    }, {
+      "date": "",
+      "location": {
+        "lat": 41.1173841,
+        "line": true,
+        "lon": -95.90826524,
+        "zoom": 12
+      },
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": "files/images/1960s/1963_SACPass_a1.jpg"
+      },
+      "text": {
+        "headline": "Offutt Air Force Base, Nebraska",
+        "text": "October 18th, 1963"
+      }
+    }, {
+      "date": "",
+      "location": {
+        "lat": 41.2587459,
+        "line": true,
+        "lon": -95.9383758,
+        "zoom": 12
+      },
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": "files/images/1960s/1964_Omaha_a1.jpg"
+      },
+      "text": {
+        "headline": "KMTV: City of Omaha Department of Public Safety, Fire, and Police",
+        "text": "1964 - 1965"
+      }
+    }, {
+      "date": "",
+      "location": {
+        "lat": 41.2587459,
+        "line": true,
+        "lon": -95.9383758,
+        "zoom": 12
+      },
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": "files/images/1960s/1964_Johnson_Press_Visit.jpg"
+      },
+      "text": {
+        "headline": "Presidential Trip to Strategic Air Command (SAC) Headquarters",
+        "text": "September 29th, 1964<br>President Johnson reassured NATO membership and allies that America is ready to defend Europe if there ever were to be a threat against the continent. The trip to the SAC HQ not only reaffirmed Johnson’s commitment to NATO, but also to combat nuclear weapons and warfare."
+      }
+    }, {
+      "date": "",
+      "location": {
+        "lat": 33.749027074123575,
+        "line": true,
+        "lon": -84.38806772232056,
+        "zoom": 17
+      },
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": "files/images/1960s/1966_Senate.jpg"
+      },
+      "text": {
+        "headline": "WSB TV: Georgia Senate",
+        "text": "January 5, 1966<br>Brokaw's access to the Senate chambers and floor"
+      }
+    }, {
+      "date": "",
+      "location": {
+        "lat": 33.749009232516954,
+        "line": true,
+        "lon": -84.38806772232056,
+        "zoom": 17
+      },
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": "files/images/1960s/1966_HouseOfRepresentatives.jpg"
+      },
+      "text": {
+        "headline": "WSB TV: Georgia House of Representatives",
+        "text": "January 10, 1966<br>Brokaw's access to the chambers and floor of the House of Representatives"
+      }
+    }, {
+      "date": "",
+      "location": {
+        "lat": 25.79552565,
+        "line": true,
+        "lon": -80.133515,
+        "zoom": 12
+      },
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": "files/images/1970s/1972_RepublicanNationalConvention_b1.jpeg"
+      },
+      "text": {
+        "headline": "1972 Republican National Convention",
+        "text": "August 21, 1972 - August 23, 1972<br>President Richard Nixon and Vice President Spiro Agnew would earn the Republican nomination from re-election. Nixon’s nomination would mark his fifth from the RNC. His appearance on the national ticket ties FDR for most; the two would be on the voting ticket in both vice presidential and presidential capacities. Agnew would end up resigning in 1973 from scandal and replacing him would be Gerald Ford. Following his role as the 40th vice president of the United States, Ford would become president of the United States following Nixon’s resignation as a result of Watergate. Ford is the only person to hold both offices without ever being elected by the Electoral College.<br><br><iframe width='580' height='325' src='https://www.youtube.com/embed/SE8QdCAUFug'></iframe>"
+      }
+    }, {
+      "date": "",
+      "location": {
+        "lat": 39.6847822,
+        "line": true,
+        "lon": -83.9296526,
+        "zoom": 12
+      },
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": "files/images/1970s/1974_PresidentialTrip_4-9_a.jpeg"
+      },
+      "text": {
+        "headline": "Nixon's Presidential Trip to Xenia, Ohio",
+        "text": "April 9th, 1974<br>An F-5 tornado killed 33 people and injured more than 1,300 others April 3, 1974, in the town of Xenia, Ohio. The tornado was one of 148 tornados that swept the nation, in what would become known as a super outbreak. The Xenia tornado caused over $100 million in damage. <br> <br> Nixon would visit Xenia and deliver remarks at a site of the devastation: a school. Xenia was hit the hardest, and this moment is still considered one of the most devastating natural disasters in American history. <br> <br> Xenia would be the site of a second damaging tornado. This time, 26 years later, an F-4 tornado ripped through the town in a near identical path as the previous one in 1974.<br><br><iframe width='580' height='325' src='https://www.youtube.com/embed/DOK7Woenobg'></iframe>"
+      }
+    }, {
+      "date": "",
+      "location": {
+        "lat": 55.7504461,
+        "line": true,
+        "lon": 37.6174943,
+        "zoom": 12
+      },
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": "files/images/1970s/1974_NixonUSSR_a.jpeg"
+      },
+      "text": {
+        "headline": "The Moscow Summit",
+        "text": "June 28th, 1974<br>President Nixon met with General Secretary Leonid Brezhnev of the Communist party of the Soviet Union. The defining feature of the summit was the signing of the Threshold Test Ban Treaty. This agreement would prohibit nuclear tests having a yield exceeding a 150 kilotons limit and remove the possibility of testing new or existing nuclear weapons going beyond the defined limit. <br><br>Despite the agreement, there were several technical concerns that would cause problems for implementation. Brokaw would note in a post-it on this press pass that this event was “President Nixon trying to make an arms deal with Russia to save his presidency. He failed.” <br><br>This would be Nixon’s last international trip before resigning in August of that year. <br><br><iframe width='580' height='325' src='https://www.youtube.com/embed/YdU8_nUoAxI'></iframe>"
+      }
+    }]
+  }
+}
