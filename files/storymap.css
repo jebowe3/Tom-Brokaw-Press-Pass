@@ -647,7 +647,7 @@
   -o-user-select: none;
   user-select: none;
 }
-/* MenuBar 
+/* MenuBar
 ================================================== */
 .vco-menubar {
   position: absolute;
@@ -686,7 +686,7 @@
 	//.translucent-background(rgb(0,0,0), .5);
 	border-top: 2px solid #000;
 	animation: invertToBlack 1s;
-	-webkit-animation:invertToBlack 1s; 
+	-webkit-animation:invertToBlack 1s;
 }
 */
 @keyframes invertToBlack {
@@ -786,7 +786,7 @@
     background: #FFF;
   }
 }
-/* MESSAGE 
+/* MESSAGE
 ================================================== */
 .vco-message,
 .vco-message-full {
@@ -909,7 +909,7 @@
   -o-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
   transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
 }
-/* SLIDE 
+/* SLIDE
 ================================================== */
 .vco-slide {
   position: absolute;
@@ -1037,7 +1037,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* Background 
+/* Background
 ================================================== */
 .vco-slide.vco-full-image-background,
 .vco-slide.vco-full-color-background {
@@ -1107,7 +1107,7 @@
 }
 /* Landscape
 ================================================== */
-/* Full Image Background 
+/* Full Image Background
 ================================================== */
 .vco-slide.vco-full-image-background {
   background: no-repeat center center;
@@ -1139,9 +1139,9 @@
 .vco-slide.vco-full-image-background .vco-media-blockquote blockquote p {
   text-shadow: 1px 1px 2px #000 !important;
 }
-/* Color Background 
+/* Color Background
 ================================================== */
-/* Text Background 
+/* Text Background
 ================================================== */
 .vco-slide.vco-text-background .vco-text .vco-text-content-container {
   padding: 20px;
@@ -1496,7 +1496,7 @@
 }
 /* StorySlider
 ================================================== */
-/* SLIDER CONTAINERS 
+/* SLIDER CONTAINERS
 ================================================== */
 .vco-storyslider {
   width: 100%;
@@ -1600,7 +1600,7 @@
   max-width: 100%;
   max-height: 100%;
 }
-/* Media Shodow 
+/* Media Shodow
 ================================================== */
 .vco-media-shadow {
   position: relative;
@@ -2511,7 +2511,7 @@
 		-webkit-transition: -webkit-transform 1s cubic-bezier(1, 0, 0, 1);
 		   -moz-transition: -moz-transform 1s cubic-bezier(1, 0, 0, 1);
 		     -o-transition: -o-transform 1s cubic-bezier(1, 0, 0, 1);
-		        transition: transform 1s cubic-bezier(1, 0, 0, 1); 
+		        transition: transform 1s cubic-bezier(1, 0, 0, 1);
 	}
 	*/
   /*
@@ -2519,7 +2519,7 @@
 		-webkit-transition: none;
 		   -moz-transition: none;
 		     -o-transition: none;
-		        transition: none; 
+		        transition: none;
 	}
 	*/
 }
