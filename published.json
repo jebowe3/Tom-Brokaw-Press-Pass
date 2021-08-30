@@ -2,7 +2,7 @@
   "storymap": {
     "call_to_action": true,
     "call_to_action_text": "",
-    "map_as_image": false,
+    "map_as_image": true,
     "slides": [{
       "background": {
         "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Photograph_of_NBC_White_House_Correspondent_Tom_Brokaw_Interviewing_President_Gerald_R._Ford_in_the_White_House_Library_for_a_Special_NBC_Broadcast_on_American_Foreign_Policy.jpg"
