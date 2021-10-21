@@ -649,6 +649,7 @@
 }
 /* MenuBar
 ================================================== */
+/* ORIGINAL SETTINGS
 .vco-menubar {
   position: absolute;
   z-index: 11;
@@ -658,6 +659,24 @@
   border-right: 1px solid #e6e6e6;
   border-bottom-right-radius: 7px;
   left: 0px;
+}
+*/
+
+/* NEW SETTINGS */
+.vco-menubar {
+  position: fixed;
+  z-index: 11;
+  text-align: left;
+  overflow: hidden;
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  left: 0;
 }
 .vco-menubar .vco-menubar-button:first-child {
   border-left: 0;
