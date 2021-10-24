@@ -27,7 +27,14 @@
       margin: 0;
     }
 
-    #wrapper {padding:75px 0 0 0; position:absolute; top:0; bottom:0; left:0; right:0;}
+    #wrapper {
+      padding:75px 0 0 0;
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+    }
 
     /* Add banner to header background */
     header {
@@ -40,13 +47,40 @@
       z-index: 800;
     }
 
-    .uiowa-logo {
+    #logobox {
       float: left;
-      position: relative;
+      height: inherit;
+      width: 38%;
+    }
+
+    .uiowa-logo {
       height: 100%;
-      top: 0px;
-      left: 10px;
-      bottom: 0px;
+      margin-left: 2.5%;
+    }
+
+    #expbox {
+      float: right;
+      height: inherit;
+      width: 62%;
+    }
+
+    h1 {
+      font-family: 'Rubik', sans-serif;
+      display: inline-block;
+      color: black;
+      font-size: 1.25em;
+      margin-top: 0.75em;
+      margin-bottom: 0px;
+      margin-left: 5%;
+    }
+
+    h4 {
+      font-family: 'Rubik', sans-serif;
+      display: inline-block;
+      color: black;
+      font-size: 0.75em;
+      margin-top: 0px;
+      margin-left: 5%;
     }
 
     #mapdiv {
@@ -54,28 +88,235 @@
       min-height: 100%;
     }
 
-    h1 {
-      font-size: 25px;
-      font-family: 'Rubik', sans-serif;
-      display: inline-block;
-      height: 10px;
-      color: black;
-      margin-left: 50px;
-      margin-top: 12px;
-    }
-
-    h4 {
-      font-size: 14px;
-      font-family: 'Rubik', sans-serif;
-      display: inline;
-      color: black;
-      margin-left: 50px;
-    }
-
     .vco-menubar {
       top: 3px;
       line-height: 30px;
       box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    @media only screen and (max-width: 1000px) {
+
+      #wrapper {
+        padding:75px 0 0 0;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+      }
+
+      header {
+        position: relative;
+        margin-top: -75px;
+        height: 75px;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 3px 3px black;
+        z-index: 800;
+      }
+
+      #logobox {
+        float: left;
+        height: inherit;
+        width: 38%;
+      }
+
+      .uiowa-logo {
+        height: 100%;
+      }
+
+      #expbox {
+        float: right;
+        height: inherit;
+        width: 62%;
+      }
+
+      h1 {
+        font-family: 'Rubik', sans-serif;
+        display: inline-block;
+        color: black;
+        font-size: 1em;
+        margin-top: 1.25em;
+        margin-bottom: 0px;
+      }
+
+      h4 {
+        font-family: 'Rubik', sans-serif;
+        display: inline-block;
+        color: black;
+        font-size: 0.6em;
+        margin-top: 0px;
+      }
+    }
+
+    @media only screen and (max-width: 800px) {
+
+      #wrapper {
+        padding:60px 0 0 0;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+      }
+
+      header {
+        position: relative;
+        margin-top: -60px;
+        height: 60px;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 3px 3px black;
+        z-index: 800;
+      }
+
+      #logobox {
+        float: left;
+        height: inherit;
+        width: 40%;
+      }
+
+      .uiowa-logo {
+        height: 100%;
+      }
+
+      #expbox {
+        float: right;
+        height: inherit;
+        width: 60%;
+      }
+
+      h1 {
+        font-family: 'Rubik', sans-serif;
+        display: inline-block;
+        color: black;
+        font-size: 1em;
+        margin-top: 0.5em;
+        margin-bottom: 0px;
+      }
+
+      h4 {
+        font-family: 'Rubik', sans-serif;
+        display: inline-block;
+        color: black;
+        font-size: 0.6em;
+        margin-top: 0px;
+      }
+
+    }
+
+    @media only screen and (max-width: 500px) {
+
+      #wrapper {
+        padding:40px 0 0 0;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+      }
+
+      header {
+        position: relative;
+        margin-top: -40px;
+        height: 40px;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 3px 3px black;
+        z-index: 800;
+      }
+
+      #logobox {
+        float: left;
+        height: inherit;
+        width: 40%;
+      }
+
+      .uiowa-logo {
+        height: 100%;
+      }
+
+      #expbox {
+        float: right;
+        height: inherit;
+        width: 60%;
+      }
+
+      h1 {
+        font-family: 'Rubik', sans-serif;
+        display: inline-block;
+        height: 0.6em;
+        color: black;
+        font-size: 0.6em;
+        margin-top: 0.90em;
+        margin-bottom: 0em;
+      }
+
+      h4 {
+        font-family: 'Rubik', sans-serif;
+        display: block;
+        height: 0.25em;
+        color: black;
+        font-size: 0.25em;
+        margin-top: 0em;
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+
+      #wrapper {
+        padding:35px 0 0 0;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+      }
+
+      header {
+        position: relative;
+        margin-top: -35px;
+        height: 35px;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 3px 3px black;
+        z-index: 800;
+      }
+
+      #logobox {
+        float: left;
+        height: inherit;
+        width: 40%;
+      }
+
+      .uiowa-logo {
+        height: 100%;
+      }
+
+      #expbox {
+        float: right;
+        height: inherit;
+        width: 60%;
+      }
+
+      h1 {
+        font-family: 'Rubik', sans-serif;
+        display: inline-block;
+        height: 0.5em;
+        color: black;
+        font-size: 0.5em;
+        margin-top: 0.90em;
+        margin-bottom: 0em;
+      }
+
+      h4 {
+        font-family: 'Rubik', sans-serif;
+        display: block;
+        height: 0.25em;
+        color: black;
+        font-size: 0.25em;
+        margin-top: 0em;
+      }
     }
   </style>
   <!-- HTML5 shim, for IE6-8 support of HTML elements-->
@@ -87,10 +328,14 @@
   <div id="wrapper">
     <!-- the header -->
     <header>
-        <img class="uiowa-logo" src="files/uiowa-logo/University-Libraries-LockupHorizontal-RGB.png">
-        <h1>Tom Brokaw's Travels Through Press Passes</h1>
-        <br>
-        <h4>Special thanks to Tom Brokaw, Jay Bowen, Geri Jansen, Patrick Johnson, and Ben Wootton</h4>
+        <div id="logobox">
+          <img class="uiowa-logo" src="files/uiowa-logo/University-Libraries-LockupHorizontal-RGB.png">
+        </div>
+        <div id="expbox">
+          <h1>Tom Brokaw's Travels Through Press Passes</h1>
+          <br>
+          <h4>Special thanks to Tom Brokaw, Jay Bowen, Geri Jansen, Patrick Johnson, and Ben Wootton</h4>
+        </div>
     </header>
     <!-- the map -->
     <div id="mapdiv"></div>
