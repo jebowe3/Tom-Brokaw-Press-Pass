@@ -42,6 +42,7 @@
     background-color: #ffffff;
     color: #353535;
     font: 14px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),url("../files/extra/panambag.png");
 }
 
 
