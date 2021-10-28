@@ -17,6 +17,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="shortcut icon" href="//cdn.knightlab.com/libs/blueline/latest/assets/logos/favicon.ico">
   <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
+  <!-- css for control window -->
+  <link rel="stylesheet" href="src/L.Control.Window.css">
   <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
@@ -82,6 +84,14 @@
       font-size: 0.75em;
       margin-top: 0px;
       margin-left: 5%;
+    }
+
+    h8 {
+      font-family: 'Roboto', sans-serif;
+      padding: 0px;
+      font-size: 12px;
+      line-height: 13px;
+      font-weight: lighter;
     }
 
     #mapdiv {
@@ -417,16 +427,19 @@
         <div id="expbox">
           <h1>Tom Brokaw's Travels Through Press Passes</h1>
           <br>
-          <!--<h4>Special thanks to Tom Brokaw, Jay Bowen, Geri Jansen, Patrick Johnson, and Ben Wootton</h4>-->
         </div>
     </header>
     <!-- the map -->
     <div id="mapdiv">
-      <input class="button" type="button" onclick="window.open('files/video/TomBrokaw.mp4');" value="Words from Brokaw" />
+      <!--<input class="button" type="button" onclick="window.open('files/video/BrokawClip2_compressed.mp4');" value="Words from Brokaw" />-->
+      <input id="button2" class="button" type="button" value="About this Project" />
     </div>
 </div>
   <!-- Your script tags should be placed before the closing body tag. -->
   <script type="text/javascript" src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
+  <!--<script type="text/javascript" src="src/leaflet-0.7.3.js"></script>-->
+  <!-- control window support -->
+  <script src='src/L.Control.Window.js'></script>
   <script>
     var storymap;
     var storymap_url = 'published.json';
@@ -516,6 +529,15 @@
       }
     }
 
+    var infoButton = document.getElementById('button2');
+
+    infoButton.onclick = function(){
+      L.control.window(mapdiv,{maxWidth:400,modal: true})
+                .title('About this Project')
+                .content('<h8>About this project here.</h8>')
+                //.prompt({callback:function(){alert('This is called after OK click!')}})
+                .show()
+    };
 
   </script>
 
