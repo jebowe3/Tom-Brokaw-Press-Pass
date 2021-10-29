@@ -108,16 +108,17 @@
     }
 
     .button {
-      top: 3px;
-      line-height: 29px;
+      position: absolute;
+      bottom: 10px;
+      right: 145px;
+      line-height: 25px;
       box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
       background-color: white;
       font-family: 'PT Sans', sans-serif;
       text-transform: none;
       font-size: 14px;
       cursor: pointer;
-      padding-bottom: 0px;
-      position: absolute;
+      padding-bottom: 3px;
       z-index: 11;
       text-align: left;
       overflow: hidden;
@@ -126,7 +127,8 @@
       border-left: 1px solid #e6e6e6;
       border-bottom-right-radius: 7px;
       border-bottom-left-radius: 7px;
-      left: 250px;
+      border-top-right-radius: 7px;
+      border-top-left-radius: 7px;
       color: #737373;
       font-weight: bold;
     }
@@ -165,57 +167,15 @@
       color: white;
     }
 
-    @media only screen and (max-width: 2000px) {
-      .button {
-        line-height: 25px;
-        padding-bottom: 3px;
-      }
-    }
-
     @media only screen and (max-width: 1000px) {
-
-      #wrapper {
-        padding:75px 0 0 0;
-        position:absolute;
-        top:0;
-        bottom:0;
-        left:0;
-        right:0;
-      }
-
-      header {
-        position: relative;
-        margin-top: -75px;
-        height: 75px;
-        width: 100%;
-        background-color: white;
-        box-shadow: 0px 3px 3px black;
-        z-index: 800;
-      }
-
-      #logobox {
-        float: left;
-        height: inherit;
-        width: 38%;
-      }
 
       .uiowa-logo {
         height: 100%;
       }
 
-      #expbox {
-        float: right;
-        height: inherit;
-        width: 62%;
-      }
-
       h1 {
-        font-family: 'Roboto', sans-serif;
-        display: inline-block;
-        color: black;
         font-size: 1.5em;
         margin-top: 1.00em;
-        margin-bottom: 0px;
       }
 
       h4 {
@@ -226,6 +186,20 @@
         margin-top: 0px;
       }
     }
+
+    @media only screen and (max-width: 900px) {
+      h1 {
+        font-size: 1.25em;
+        margin-top: 1.30em;
+      }
+    }
+
+    @media only screen and (max-height: 400px) {
+      .vco-slide-calltoaction {
+        visibility: hidden;
+      }
+    }
+/*
 
     @media only screen and (max-width: 900px) {
       h1 {
@@ -450,6 +424,7 @@
         margin-top: 1.5em;
       }
     }
+*/
   </style>
   <!-- HTML5 shim, for IE6-8 support of HTML elements-->
   <!--[if lt IE 9]>
