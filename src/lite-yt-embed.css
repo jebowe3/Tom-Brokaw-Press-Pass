@@ -6,7 +6,8 @@ lite-youtube {
     background-position: center center;
     background-size: cover;
     cursor: pointer;
-    max-width: 720px;
+    max-height: 315px;
+    max-width: 560px;
 }
 
 /* gradient */
@@ -33,8 +34,8 @@ lite-youtube::after {
     padding-bottom: calc(100% / (16 / 9));
 }
 lite-youtube > iframe {
-    width: 100%;
-    height: 100%;
+    width: 560px;
+    height: 315px;
     position: absolute;
     top: 0;
     left: 0;
