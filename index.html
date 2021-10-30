@@ -27,10 +27,6 @@
   https://github.com/paulirish/lite-youtube-embed -->
   <link rel="stylesheet" href="src/lite-yt-embed.css" />
   <!-- Load font css -->
-  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
   <!-- Define page css -->
   <style>
@@ -87,14 +83,6 @@
       margin-top: 0.75em;
       margin-bottom: 0px;
       margin-left: 5%;
-    }
-
-    h8 {
-      font-family: 'Roboto', sans-serif;
-      padding: 0px;
-      font-size: 12px;
-      line-height: 13px;
-      font-weight: lighter;
     }
 
     #mapdiv {
@@ -306,7 +294,7 @@
       <input id="button2" class="button2" type="button" value="About this Project" />
     </div>
   </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js'></script>
+  <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js'></script>-->
   <!-- Load KnightLab's StoryMap JavaScript -->
   <script type="text/javascript" src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
   <!-- css for search bar (https://github.com/stefanocudini/leaflet-search) -->
@@ -394,12 +382,15 @@
       }
     }
 
+    // In this function, you can access the data in the published.json file and the map
     (function() {
       fetch(storymap_url)
         .then(response => response.json())
         .then(data => {
           buildStoryMap(data);
 
+          // Define an empty geojson file to which you will add the data from the slides.
+          // It is necessary to create a Leaflet layer from this data because the search control requires a Leaflet layer.
           var SlidesLayer = {
             "type": "FeatureCollection",
             "name": "SlidesLayer",
@@ -407,42 +398,55 @@
             "features": []
           };
 
+          // Define the slides data
           var slides = data.storymap.slides;
 
+          // Iterate through each slide
           for(var i in slides) {
+            // Avoid pushing data from the intro slide
             if (slides[i].location.lon != null) {
-              var hline = slides[i].text.headline;
-              var content = slides[i].text.text;
-              var lat = slides[i].location.lat;
-              var lon = slides[i].location.lon;
+              var hline = slides[i].text.headline; // This is the headline
+              var content = slides[i].text.text; // This is the descriptive text and videos
+              var date = content.split("<br>")[0]; // This is the date taken from the content
+              var lat = slides[i].location.lat; // This is the latitude of the point
+              var lon = slides[i].location.lon; // This is the longitude of the point
+              // Push the data into the empty geojson defined above
               SlidesLayer.features.push({
                 "type": "Feature",
                 "properties": {
-                  "headline": hline,
-                  "text": content
+                  "headline": hline, // This is not required, but we may want it later
+                  "text": content, // This is not required, but we may want it later
+                  "filterprop": hline + '; ' + date // This is required. The search control will search this data
                 },
                 "geometry": {
                   "type": "Point",
-                  "coordinates": [ lon, lat ]
+                  "coordinates": [ lon, lat ] // This is required
                 }
               });
             }
           };
 
+          // THE MAP - This is IMPORTANT because it was hard to find and we need it for adding controls
           var map = storymap.map;
 
+          // Create a Leaflet layer from the geojson file created above
           var sLayer = L.geoJson(SlidesLayer);
 
+          // Create the search control and add it to the map
           var searchControl = new L.Control.Search({
-            layer: sLayer,
-            propertyName: 'headline',
+            layer: sLayer, // Run the search on the sLayer Leaflet layer defined above
+            propertyName: 'filterprop', // Use the filterprop attribute for searching
+            initial: false, // IMPORTANT!! - If this is not set to false, the control will limit searches to exact initial characters
             marker: false
           }).addTo(map);
 
+          // Make sure to remove the Leaflet layer from the map so that it does not produce markers over the markers already in the map
           map.removeLayer(sLayer);
 
-          searchControl.on('search:locationfound', function(e) {
-            (document.querySelector('[title="'+e.text+'"]')).click();
+          // IMPORTANT!! We need this event to trigger clicks on the appropriate map markers.
+          // This will take us to the correct slide using the search control.
+          searchControl.on('search:locationfound', function(e) { // When a match is selected in the search bar...
+            (document.querySelector('[title="'+e.text.split('; ')[0]+'"]')).click(); // Click the marker with the matching title
           });
 
         });
@@ -454,9 +458,12 @@
       }
     };
 
+    // This is the button that triggers the info about the project
     var infoButton = document.getElementById('button2');
 
+    // When this button is clicked...
     infoButton.onclick = function(){
+      // Open the window with the following information
       L.control.window(mapdiv,{maxWidth:500,modal:true})
                 .title('About this Project')
                 .content('<b>Project Overview</b><br><q>A trove of passes</q>was the scribbled note attached to a worn blue Pan-Am bag stuffed with press passes when Tom Brokaw donated his papers to the University of Iowa Libraries in 2016.<br><br>These passes stretched across five decades of national and international events, documenting the career of an award-winning journalist.<br><br>The following digital exhibit utilizes these passes to explore a timeline of events that Tom Brokaw witnessed and reported on throughout his career. Here is a chance to view journalism through the lens of a journalist, while also exploring the role of journalism in telling our history.<br><br><b>Credits</b><br>This project was made possible through the efforts of <b>Patrick Johnson</b>. Patrick came to Special Collections & Archives in the summer of 2021 as a Humanities for the Public Good Intern. Under the guidance of Elizabeth Riordan at the University of Iowa Libraries, Patrick’s enthusiasm for journalistic history moved this project forward to what it is today.<br><br>As Patrick wrote, <q>Journalism is seen as the first draft of history. It is through journalistic works that we often come to know and learn about the world and the people around us. Journalism defines our collective memory. What Brokaw did was tell a draft of history that defined a generation. In some respects...this project can serve as a second draft—a history of a history.</q><br><br>Thank you also to <b>Ben Wootton</b> for research support, and to <b>Jay Bowen</b> for sharing his expertise in StoryMapJS to get the project online and running smoothly.<br><br>Of course, this project could not have happened without <b>Tom Brokaw</b>, who offered not only his papers to Special Collections & Archives, but also his time and stories. Special thanks is also needed for <b>Geri Jansen</b>, who helped navigate our questions; without her help this project would not have been completed.<br><br>Thank you also to <b>John Culshaw</b>, <b>Margaret Gamm</b>, <b>Tom Keegan</b>, <b>Elizabeth Riordan</b>, <b>Beth Stone</b>, <b>Bethany Davis</b>, and <b>Justin Baumgartner</b> for their help and support.')
