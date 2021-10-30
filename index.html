@@ -16,10 +16,13 @@
   <meta name="apple-touch-fullscreen" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="shortcut icon" href="src/favicon.ico">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
   <!-- Load KnightLab StoryMap CSS -->
   <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
   <!-- css for control window -->
   <link rel="stylesheet" href="src/L.Control.Window.css">
+  <!-- css for search bar (https://github.com/stefanocudini/leaflet-search) -->
+  <link rel="stylesheet" href="src/leaflet-search.css" />
   <!-- Lite YouTube Embed (Improves page loading time by preventing loading of YouTube videos until clicked)
   https://github.com/paulirish/lite-youtube-embed -->
   <link rel="stylesheet" href="src/lite-yt-embed.css" />
@@ -303,13 +306,17 @@
       <input id="button2" class="button2" type="button" value="About this Project" />
     </div>
   </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js'></script>
   <!-- Load KnightLab's StoryMap JavaScript -->
   <script type="text/javascript" src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
+  <!-- css for search bar (https://github.com/stefanocudini/leaflet-search) -->
+  <script src="src/leaflet-search.js"></script>
   <!-- Lite YouTube Embed (Improves page loading time by preventing loading of YouTube videos until clicked)
   https://github.com/paulirish/lite-youtube-embed -->
   <script src="src/lite-yt-embed.js"></script>
   <!-- control window support -->
   <script src='src/L.Control.Window.js'></script>
+
   <script>
     var storymap;
     var storymap_url = 'published.json';
@@ -390,14 +397,62 @@
     (function() {
       fetch(storymap_url)
         .then(response => response.json())
-        .then(data => buildStoryMap(data));
+        .then(data => {
+          buildStoryMap(data);
+
+          var SlidesLayer = {
+            "type": "FeatureCollection",
+            "name": "SlidesLayer",
+            "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+            "features": []
+          };
+
+          var slides = data.storymap.slides;
+
+          for(var i in slides) {
+            if (slides[i].location.lon != null) {
+              var hline = slides[i].text.headline;
+              var content = slides[i].text.text;
+              var lat = slides[i].location.lat;
+              var lon = slides[i].location.lon;
+              SlidesLayer.features.push({
+                "type": "Feature",
+                "properties": {
+                  "headline": hline,
+                  "text": content
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [ lon, lat ]
+                }
+              });
+            }
+          };
+
+          var map = storymap.map;
+
+          var sLayer = L.geoJson(SlidesLayer);
+
+          var searchControl = new L.Control.Search({
+            layer: sLayer,
+            propertyName: 'headline',
+            marker: false
+          }).addTo(map);
+
+          map.removeLayer(sLayer);
+
+          searchControl.on('search:locationfound', function(e) {
+            (document.querySelector('[title="'+e.text+'"]')).click();
+          });
+
+        });
     })();
 
     window.onresize = function(event) {
       if (storymap) {
         storymap.updateDisplay();
       }
-    }
+    };
 
     var infoButton = document.getElementById('button2');
 
