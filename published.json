@@ -3,6 +3,7 @@
     "call_to_action": true,
     "call_to_action_text": "",
     "map_as_image": true,
+    "map_type": "osm:standard",
     "zoomify": {
             "path": "files/images",
             "width": 300,
