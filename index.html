@@ -106,6 +106,8 @@
     }
 
     .button-navbar {
+      display: flex;
+      justify-content: center;
       bottom: 25px;
       left: 10px;
       box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
@@ -119,6 +121,12 @@
       border-top-left-radius: 7px;
       font-size: 0px;
       background-color: #FFF;
+    }
+    .button-container {
+      padding: 0;
+    }
+    .button-container:not(:last-child) {
+      border-right: 1px solid #ddd;
     }
     .button {
       radius: 0px;
@@ -146,15 +154,21 @@
       background-color: #c4442c;
       color: white;
     }
+    .vertical {
+      height: 100%;
+      width: 0;
+      border: 1px solid black;
+    }
     .button2 {
       radius: 0px;
       float: left;
       border-radius: 0px;
-      border-color: black;
+      /*border-color: black;*/
       border-top: 0;
       border-bottom: 0;
       border-right: 0;
-      border-left-width: 1px;
+      border-left-width: 0px;
+      margin-left: 0;
       padding: 6px 12px 6px 12px;
       background-color: #FFF;
       cursor: pointer;
@@ -407,8 +421,12 @@
     <!-- the map -->
     <div id="mapdiv">
       <div class="button-navbar">
-        <input class="button" type="button" onclick="window.open('files/video/BrokawClip2_compressed.mp4');" value="Words from Brokaw" />
-        <input id="button2" class="button2" type="button" value="About this Project" />
+        <div class="button-container">
+          <input class="button" type="button" onclick="window.open('files/video/BrokawClip2_compressed.mp4');" value="Words from Brokaw" />
+        </div>
+        <div class="button-container">
+          <input class="button2" type="button" value="About this Project" />
+        </div>
       </div>
     </div>
   </div>
