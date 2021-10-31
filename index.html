@@ -105,7 +105,95 @@
       content: url(files/extra/pass.png); /* icon from: https://fontawesome.com/v5.15/icons/address-card?style=regular */
     }
 
+    .button-navbar {
+      font-family: 'PT Sans', sans-serif;
+      text-transform: none;
+      bottom: 25px;
+      left: 10px;
+      line-height: 25px;
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
+      box-sizing: content-box;
+      position: absolute;
+      z-index: 1011;
+      text-align: left;
+      overflow: hidden;
+      border-bottom-right-radius: 7px;
+      border-bottom-left-radius: 7px;
+      border-top-right-radius: 7px;
+      border-top-left-radius: 7px;
+      font-weight: 400;
+      font-size: 14px;
+      background-color: #FFF;
+    }
+    .button2 {
+      float: left;
+      border-top: 0;
+      border-bottom: 0;
+      border-left: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
+      border-right: 0;
+      padding: 6px 12px 6px 12px;
+      background-color: #FFF;
+      cursor: pointer;
+      font-weight: bold;
+      color: #737373;
+      font-family: 'PT Sans', sans-serif;
+    }
+    .button2:hover {
+      background-color: #c4442c;
+      color: white;
+    }
     .button {
+      float: left;
+      border-top: 0;
+      border-bottom: 0;
+      border-left: 0;
+      border-right: 0;
+      padding: 6px 12px 6px 12px;
+      background-color: rgba(217, 217, 217, 0.9);
+      background-color: #FFF;
+      cursor: pointer;
+      font-weight: bold;
+      color: #737373;
+      font-family: 'PT Sans', sans-serif;
+    }
+    .button:hover {
+      background-color: #c4442c;
+      color: white;
+    }
+/*
+    .navbar {
+      position: absolute;
+      bottom: 25px;
+      left: 10px;
+      line-height: 25px;
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
+      background-color: white;
+      font-family: 'PT Sans', sans-serif;
+      text-transform: none;
+      font-size: 14px;
+      cursor: pointer;
+      padding-bottom: 0px;
+      z-index: 1011;
+      text-align: left;
+      overflow: hidden;
+      border-bottom: 1px solid #e6e6e6;
+      border-right: 1px solid #e6e6e6;
+      border-left: 1px solid #e6e6e6;
+      border-bottom-right-radius: 7px;
+      border-bottom-left-radius: 7px;
+      border-top-right-radius: 7px;
+      border-top-left-radius: 7px;
+      color: #737373;
+      font-weight: bold;
+    }
+
+    .button {
+      border-left: 0;
+      border-top: 0;
+      border-bottom: 0;
+      background-color: white;
+      line-height: 25px;
+
       position: absolute;
       bottom: 25px;
       left: 145px;
@@ -136,6 +224,14 @@
     }
 
     .button2 {
+      border-right: 0;
+      border-left: 0;
+      border-top: 0;
+      border-bottom: 0;
+      background-color: white;
+      line-height: 25px;
+      left: 0;
+
       position: absolute;
       bottom: 25px;
       left: 10px;
@@ -159,12 +255,13 @@
       border-top-left-radius: 7px;
       color: #737373;
       font-weight: bold;
+
     }
     .button2:hover {
       background-color: #c4442c;
       color: white;
     }
-
+*/
     @media only screen and (max-width: 1200px) {
 
       h1 {
@@ -299,8 +396,10 @@
     </header>
     <!-- the map -->
     <div id="mapdiv">
-      <input class="button" type="button" onclick="window.open('files/video/BrokawClip2_compressed.mp4');" value="Words from Brokaw" />
-      <input id="button2" class="button2" type="button" value="About this Project" />
+      <div class="button-navbar">
+        <input class="button" type="button" onclick="window.open('files/video/BrokawClip2_compressed.mp4');" value="Words from Brokaw" />
+        <input id="button2" class="button2" type="button" value="About this Project" />
+      </div>
     </div>
   </div>
   <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js'></script>-->
