@@ -55,7 +55,13 @@ class LiteYTEmbed extends HTMLElement {
         // Once the user clicks, add the real iframe and drop our play button
         // TODO: In the future we could be like amp-youtube and silently swap in the iframe during idle time
         //   We'd want to only do this for in-viewport or near-viewport ones: https://github.com/ampproject/amphtml/pull/5003
-        this.addEventListener('click', e => this.addIframe());
+        this.addEventListener('click', e => {
+          this.addIframe();
+
+          /* CUSTOMIZATION TO STOP VIDEO PLAY ON MOUSEOUT */
+          onYouTubeIframeAPIReady(); // See function definition at bottom of page
+
+        });
     }
 
     // // TODO: Support the the user changing the [videoid] attribute
@@ -119,7 +125,27 @@ class LiteYTEmbed extends HTMLElement {
 
         // Set focus for a11y
         this.querySelector('iframe').focus();
+
     }
 }
 // Register custom element
 customElements.define('lite-youtube', LiteYTEmbed);
+
+var $$ = function(tagname) { return document.getElementsByTagName(tagname); }
+
+function onYouTubeIframeAPIReady() {
+    var videos = $$('iframe'); // the iframe elements
+
+    for (var i = 0; i < videos.length; i++) { // for each iframe
+      videos[i].onmouseout = function(e) { // assigning a callback for this event
+        var currentHoveredElement = e.target;
+        var currentSrc = currentHoveredElement.attributes.src.value;
+
+        var leg = currentSrc.replace('autoplay=1','autoplay=false');
+        $(e.target).attr("src",leg);
+        console.log(currentHoveredElement);
+
+      };
+    }
+
+}
