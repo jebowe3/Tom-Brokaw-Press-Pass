@@ -137,8 +137,8 @@ function onYouTubeIframeAPIReady() {
     // define all buttons on page
     var slidebuttons = document.getElementsByClassName('vco-slidenav-icon');
     var otherbuttons = document.querySelectorAll("[class*=button]");
-    var searchtips = document.getElementsByClassName('search-tip');
-    
+    var searchtips = document.querySelectorAll("[class*=search-tip]");
+
     // define the iframes
     var videos = document.getElementsByTagName('iframe');
 
