@@ -137,6 +137,8 @@ function onYouTubeIframeAPIReady() {
     // define all buttons on page
     var slidebuttons = document.getElementsByClassName('vco-slidenav-icon');
     var otherbuttons = document.querySelectorAll("[class*=button]");
+    var searchtips = document.getElementsByClassName('search-tip');
+    
     // define the iframes
     var videos = document.getElementsByTagName('iframe');
 
@@ -155,6 +157,9 @@ function onYouTubeIframeAPIReady() {
         }
         for (var i = 0 ; i < slidebuttons.length; i++) {
            slidebuttons[i].addEventListener('click' , method1 ) ;
+        }
+        for (var i = 0 ; i < searchtips.length; i++) {
+           searchtips[i].addEventListener('click' , method1 ) ;
         }
         // perform this function on click
         function method1(){
