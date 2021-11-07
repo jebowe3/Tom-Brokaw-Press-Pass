@@ -137,7 +137,8 @@ function onYouTubeIframeAPIReady() {
     // define all buttons on page
     var slidebuttons = document.getElementsByClassName('vco-slidenav-icon');
     var otherbuttons = document.querySelectorAll("[class*=button]");
-    var searchtips = document.querySelectorAll("[class*=search-tip]");
+    var controls = document.querySelectorAll("[class*=leaflet-control]");
+    var searchcancels = document.querySelectorAll("[class*=search-cancel]");
 
     // define the iframes
     var videos = document.getElementsByTagName('iframe');
@@ -158,9 +159,13 @@ function onYouTubeIframeAPIReady() {
         for (var i = 0 ; i < slidebuttons.length; i++) {
            slidebuttons[i].addEventListener('click' , method1 ) ;
         }
-        for (var i = 0 ; i < searchtips.length; i++) {
-           searchtips[i].addEventListener('click' , method1 ) ;
+        for (var i = 0 ; i < controls.length; i++) {
+           controls[i].addEventListener('click' , method1 ) ;
         }
+        for (var i = 0 ; i < searchcancels.length; i++) {
+           searchcancels[i].addEventListener('click' , method1 ) ;
+        }
+
         // perform this function on click
         function method1(){
           // replace the part of the url that makes the video play automatically
