@@ -58,7 +58,7 @@ class LiteYTEmbed extends HTMLElement {
         this.addEventListener('click', e => {
           this.addIframe();
 
-          /* CUSTOMIZATION TO STOP VIDEO PLAY ON MOUSEOUT */
+          /* CUSTOMIZATION TO STOP VIDEO PLAY ON MOUSEOUT FOLLOWED BY A CLICK ON ANOTHER BUTTON */
           onYouTubeIframeAPIReady(); // See function definition at bottom of page
 
         });
@@ -131,19 +131,37 @@ class LiteYTEmbed extends HTMLElement {
 // Register custom element
 customElements.define('lite-youtube', LiteYTEmbed);
 
-var $$ = function(tagname) { return document.getElementsByTagName(tagname); }
-
+/* CUSTOMIZATION TO STOP VIDEO PLAY ON MOUSEOUT FOLLOWED BY A CLICK ON ANOTHER BUTTON */
 function onYouTubeIframeAPIReady() {
-    var videos = $$('iframe'); // the iframe elements
+
+    // define all buttons on page
+    var slidebuttons = document.getElementsByClassName('vco-slidenav-icon');
+    var otherbuttons = document.querySelectorAll("[class*=button]");
+    // define the iframes
+    var videos = document.getElementsByTagName('iframe');
 
     for (var i = 0; i < videos.length; i++) { // for each iframe
-      videos[i].onmouseout = function(e) { // assigning a callback for this event
+      videos[i].onmouseout = function(e) { // assign a callback for mouseout from iframe
+
+        // define the current iframe
         var currentHoveredElement = e.target;
+        // define the source youtube url
         var currentSrc = currentHoveredElement.attributes.src.value;
 
-        var leg = currentSrc.replace('autoplay=1','autoplay=false');
-        $(e.target).attr("src",leg);
-        console.log(currentHoveredElement);
+        // iterate through all buttons on the page
+        // and listen for any click
+        for (var i = 0 ; i < otherbuttons.length; i++) {
+           otherbuttons[i].addEventListener('click' , method1 ) ;
+        }
+        for (var i = 0 ; i < slidebuttons.length; i++) {
+           slidebuttons[i].addEventListener('click' , method1 ) ;
+        }
+        // perform this function on click
+        function method1(){
+          // replace the part of the url that makes the video play automatically
+          var leg = currentSrc.replace('autoplay=1','autoplay=false');
+          $(e.target).attr("src",leg);
+        }
 
       };
     }
