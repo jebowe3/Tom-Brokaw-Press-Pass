@@ -22,13 +22,14 @@
   <!-- css for control window -->
   <link rel="stylesheet" href="src/L.Control.Window.css">
   <!-- css for search bar (https://github.com/stefanocudini/leaflet-search) -->
-  <link rel="stylesheet" href="src/leaflet-search.mobile.css" />
+  <!--<link rel="stylesheet" href="src/leaflet-search.mobile.css" />-->
   <link rel="stylesheet" href="src/leaflet-search.css" />
   <!-- Lite YouTube Embed (Improves page loading time by preventing loading of YouTube videos until clicked)
   https://github.com/paulirish/lite-youtube-embed -->
   <link rel="stylesheet" href="src/lite-yt-embed.css" />
   <!-- Load font css -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
   <!-- Define page css -->
   <style>
     html,
@@ -79,12 +80,24 @@
     h1 {
       /*font-family: 'Roboto', sans-serif;*/
       font-family: 'Lato', sans-serif;
-      display: inline-block;
       color: black;
       font-size: 1.75em;
-      margin-top: 0.75em;
+      margin-top: 0.37em;
       margin-bottom: 0px;
       margin-left: 5%;
+      padding: 0px;
+      text-align: left;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: black;
+      font-size: 0.85em;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 5%;
+      padding: 0px;
+      text-align: left;
     }
 
     #mapdiv {
@@ -144,11 +157,11 @@
       background-color: #FFF;
       cursor: pointer;
       color: #737373;
-      line-height: 25px;
+      line-height: 30px;
       text-align: left;
       font-family: 'PT Sans', sans-serif;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 16px;
       text-transform: none;
     }
     .button:hover {
@@ -174,11 +187,11 @@
       background-color: #FFF;
       cursor: pointer;
       color: #737373;
-      line-height: 25px;
+      line-height: 30px;
       text-align: left;
       font-family: 'PT Sans', sans-serif;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 16px;
       text-transform: none;
     }
     .button2:hover {
@@ -190,7 +203,18 @@
 
       h1 {
         font-size: 1.5em;
-        margin-top: 1.0em;
+        margin-top: 0.6em;
+      }
+      h2 {
+        font-size: 0.7em;
+      }
+      .button {
+        line-height: 25px;
+        font-size: 14px;
+      }
+      .button2 {
+        line-height: 25px;
+        font-size: 14px;
       }
 
     }
@@ -203,7 +227,10 @@
 
       h1 {
         font-size: 1.35em;
-        margin-top: 1.15em;
+        margin-top: 0.75em;
+      }
+      h2 {
+        font-size: 0.65em;
       }
 
     }
@@ -217,7 +244,18 @@
     @media only screen and (max-width: 900px) {
       h1 {
         font-size: 1.15em;
-        margin-top: 1.35em;
+        margin-top: 0.95em;
+      }
+      h2 {
+        font-size: 0.65em;
+      }
+      .button {
+        line-height: 20px;
+        font-size: 12px;
+      }
+      .button2 {
+        line-height: 20px;
+        font-size: 12px;
       }
     }
 
@@ -246,7 +284,10 @@
 
       h1 {
         font-size: 1.0em;
-        margin-top: 1.25em;
+        margin-top: 0.8em;
+      }
+      h2 {
+        font-size: 0.55em;
       }
 
     }
@@ -268,7 +309,10 @@
 
       h1 {
         font-size: 0.75em;
-        margin-top: 0.50em;
+        margin-top: 0.70em;
+      }
+      h2 {
+        font-size: 0.45em;
       }
 
       .leaflet-container .leaflet-control-search {
@@ -291,7 +335,11 @@
       h1 {
         height: 0.6em;
         font-size: 0.5em;
-        margin-top: 1.6em;
+        margin-top: 1em;
+      }
+      h2 {
+        font-size: 0.35em;
+        margin-top: 0.75em;
       }
 
     }
@@ -300,7 +348,11 @@
       h1 {
         height: 0.5em;
         font-size: 0.5em;
-        margin-top: 1.65em;
+        margin-top: 1em;
+      }
+      h2 {
+        font-size: 0.35em;
+        margin-top: 0.75em;
       }
     }
 
@@ -319,7 +371,7 @@
         </div>
         <div id="expbox">
           <h1 style="text-transform:uppercase;">press pass access with tom brokaw</h1>
-          <br>
+          <h2>History Through the Eyes of a Journalist</h2>
         </div>
     </header>
     <!-- the map -->
@@ -350,6 +402,7 @@
   <script src='src/L.Control.Window.js'></script>
 
   <script>
+    L.Icon.Default.imagePath = 'images/search-icon.png';
     var storymap;
     var storymap_url = 'published.json';
     const urlParams = new URLSearchParams(window.location.search);
